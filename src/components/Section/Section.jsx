@@ -11,7 +11,7 @@ export const Section = () => {
   return (
     <StyledSection>
       <SectionWrapper>
-        <div style={{ width: "553px", height: "152px", color: "white" }}>
+        <div style={{ color: "white", maxWidth: "553px" }}>
           <SectionSpan>WYPRÓBUJ</SectionSpan>
           <SectionText>
             Zobacz, poczuj i przekonaj się, czym jest CUPRA. Poznaj samochody,
@@ -19,10 +19,8 @@ export const Section = () => {
             komfortu.
           </SectionText>
         </div>
-        <div style={{ width: "787px", height: "574px" }}>
           <img src={cupra} />
-        </div>
-        <div style={{ width: "553px", height: "152px", color: "white" }}>
+        <div style={{ color: "white" }}>
           <SectionSpan fontSize="40px">TYLKO DLA ODWAŻNYCH</SectionSpan>
           <SectionText>
             Model CUPRA, który idealnie wpisuje się w DNA marki. Unikalny SUV
@@ -30,9 +28,7 @@ export const Section = () => {
             najlepsze w marce CUPRA.
           </SectionText>
         </div>
-        <div style={{ width: "553px", height: "737px" }}>
           <img src={cupra2} />
-        </div>
       </SectionWrapper>
     </StyledSection>
   );
