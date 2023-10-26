@@ -15,10 +15,10 @@ ${modernNormalize}
 `;
 
 export const Container = styled.div`
+margin: 0 20px;
+@media (min-width: 1430px) {
   width: 1372px;
   margin: 0 auto;
-  @media (max-width: 1430px) {
-    margin: 0 20px;
   }
 `;
 
