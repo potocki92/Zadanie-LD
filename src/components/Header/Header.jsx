@@ -1,12 +1,14 @@
 import { Nav } from "../Nav/Nav";
-import { StyledHeader } from "./Header.styled";
+import { HeaderWrapper, StyledHeader } from "./Header.styled";
 import Logo from "/logo.svg";
 
 const Header = () => {
   return (
-    <StyledHeader as="header">
+    <StyledHeader>
+      <HeaderWrapper>
         <img src={Logo} alt="Cupra logo" />
-      <Nav />
+        <Nav />
+      </HeaderWrapper>
     </StyledHeader>
   );
 };
