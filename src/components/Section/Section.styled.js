@@ -7,28 +7,44 @@ export const StyledSection = styled.section`
 
 export const SectionWrapper = styled(Container)`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: 200px 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
   :nth-child(1) {
-    grid-area: 1/1/4/4;
+    grid-row-start: 1;
   }
   :nth-child(2) {
-    grid-area: 2/1/6/1;
+    grid-row-start: 2;
   }
   :nth-child(3) {
-    grid-area: 7/1/7/1;
+    grid-row-start: 3;
   }
   :nth-child(4) {
-    grid-area: 2/2/8/2;
-    margin-top: 128px;
-    justify-self: end;
+    grid-row-start: 4;
   }
 
-  > :nth-child(2) {
-    margin-top: 68px;
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    :nth-child(1) {
+      grid-area: 1/1/4/4;
+    }
+    :nth-child(2) {
+      grid-area: 2/1/6/1;
+    }
+    :nth-child(3) {
+      grid-area: 7/1/7/1;
+    }
+    :nth-child(4) {
+      grid-area: 2/2/8/2;
+      margin-top: 128px;
+      justify-self: end;
+    }
+
+    > :nth-child(2) {
+      margin-top: 68px;
+    }
   }
 `;
 
