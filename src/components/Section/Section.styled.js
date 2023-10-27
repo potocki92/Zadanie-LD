@@ -10,40 +10,48 @@ export const SectionWrapper = styled(Container)`
   grid-template-rows: 200px 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  overflow: hidden;
+  margin: 0;
 
-  :nth-child(1) {
+  > :nth-child(1) {
     grid-row-start: 1;
+    margin: 0 30px;
   }
-  :nth-child(2) {
+  > :nth-child(2) {
     grid-row-start: 2;
+    margin: 30px 0;
   }
-  :nth-child(3) {
+  > :nth-child(3) {
     grid-row-start: 3;
+    margin: 0 30px;
   }
-  :nth-child(4) {
+  > :nth-child(4) {
     grid-row-start: 4;
+    margin: 30px 0;
   }
 
   @media (min-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    :nth-child(1) {
-      grid-area: 1/1/4/4;
+    grid-template-rows: repeat( auto-fit, minmax(250px, 1fr) );
+    grid-column-gap: 32px;
+    margin: 0 auto;
+    > :nth-child(1) {
+      grid-area: 1 / 1 / 2 / 2;
+      margin: 0;
     }
-    :nth-child(2) {
-      grid-area: 2/1/6/1;
-    }
-    :nth-child(3) {
-      grid-area: 7/1/7/1;
-    }
-    :nth-child(4) {
-      grid-area: 2/2/8/2;
-      margin-top: 128px;
-      justify-self: end;
-    }
-
     > :nth-child(2) {
-      margin-top: 68px;
+      grid-area: 2 / 1 / 5 / 2; 
+      margin: 0;
+    }
+    > :nth-child(3) {
+      grid-area: 5/1/6/2;
+      margin: 0;
+      margin-top: 213px;
+    }
+    > :nth-child(4) {
+      grid-area: 2 / 2 / 7 / 3; 
+      margin-top: 60px;
+      justify-self: end;
     }
   }
 `;
@@ -51,10 +59,25 @@ export const SectionWrapper = styled(Container)`
 export const SectionSpan = styled.span`
   font-size: ${(props) => props.fontSize || "60px"};
   font-weight: 300;
+  @media (min-width: 1430px) {
+    margin-left: 0
+  }
 `;
 
 export const SectionText = styled.p`
   font-weight: 400;
   font-size: 20px;
   color: #ffffff80;
+  @media (min-width: 1430px) {
+    margin-left: 0
+  }
 `;
+
+export const SectionButton = styled.button`
+padding: ${(props) => props.padding || ""};
+height: ${(props) => props.height || ""};
+margin-left: 20px;
+@media (min-width: 1430px) {
+  margin-left: 0
+}
+`
