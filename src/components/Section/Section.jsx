@@ -1,34 +1,32 @@
+import { Image } from "../Image/Image";
 import {
+  SectionButton,
   SectionSpan,
   SectionText,
   SectionWrapper,
   StyledSection,
 } from "./Section.styled";
-import cupra from "/image/section/cupra_formentor.png";
-import cupra2 from "/image/section/cupra_formentor_1.png";
 
-export const Section = () => {
+export const Section = ({data}) => {
   return (
     <StyledSection>
       <SectionWrapper>
-        <div style={{ color: "white", maxWidth: "553px" }}>
-          <SectionSpan>WYPRÓBUJ</SectionSpan>
-          <SectionText>
-            Zobacz, poczuj i przekonaj się, czym jest CUPRA. Poznaj samochody,
-            które są wyjątkowym połączeniem technologii, mocy, elegancji i
-            komfortu.
-          </SectionText>
-        </div>
-          <img src={cupra} />
-        <div style={{ color: "white" }}>
-          <SectionSpan fontSize="40px">TYLKO DLA ODWAŻNYCH</SectionSpan>
-          <SectionText>
-            Model CUPRA, który idealnie wpisuje się w DNA marki. Unikalny SUV
-            coupé, wyjątkowy, odważny i innowacyjny – zapewni Ci to, co
-            najlepsze w marce CUPRA.
-          </SectionText>
-        </div>
-          <img src={cupra2} />
+      {data.map((item, key) => {
+        const shouldRenderButton = item.button.shouldRenderButton
+        return (
+          <>
+          <div key={key} style={item.style}>
+            <SectionSpan fontSize={item.span.fontSize || ""}>{item.span.sectionSpan}</SectionSpan>
+            <SectionText>{item.text.sectionText}</SectionText>
+            {
+              shouldRenderButton ?
+            <SectionButton padding={item.button.padding} height={item.button.height}>{item.button.text}</SectionButton> : <></>
+            }
+          </div>
+            <Image image={item.image} alt={key} />
+          </>
+        );
+      })}
       </SectionWrapper>
     </StyledSection>
   );
