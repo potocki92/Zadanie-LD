@@ -15,10 +15,11 @@ ${modernNormalize}
 `;
 
 export const Container = styled.div`
-margin: 0 20px;
-@media (min-width: 1430px) {
-  width: 1372px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0 20px;
+  @media (min-width: 1430px) {
+    width: 1372px;
+    margin: 0 auto;
   }
 `;
 
